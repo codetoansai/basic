@@ -199,4 +199,41 @@ BTC
             <p id="muatienao_btc_sell"></p>
         </td>
     </tr>
+
+        <tr>
+        <td rowspan="3">
+            <a href="https://vnexmoney.com/" target="_blank">vnexmoney</a>
+        </td>
+        <td>
+            <p id="vnexmoney_btc_base1"></p>
+        </td>
+        <td>
+            <p id="vnexmoney_btc_buy_base1"></p>
+        </td>
+        <td>
+            <p id="vnexmoney_btc_sell_base1"></p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p id="vnexmoney_btc_base2"></p>
+        </td>
+        <td>
+            <p id="vnexmoney_btc_buy_base2"></p>
+        </td>
+        <td>
+            <p id="vnexmoney_btc_sell_base2"></p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p id="vnexmoney_btc_base3"></p>
+        </td>
+        <td>
+            <p id="vnexmoney_btc_buy_base3"></p>
+        </td>
+        <td>
+            <p id="vnexmoney_btc_sell_base3"></p>
+        </td>
+    </tr>
 </table>

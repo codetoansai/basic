@@ -302,22 +302,22 @@ class ShowController extends Controller {
 		return $result;
 	}
 
-	// public function actionVnexmoney() {
-	// 	\Yii::$app->response->format = Response::FORMAT_JSON;
-	// 	$curl = new Curl();
+	public function actionVnexmoney() {
+		\Yii::$app->response->format = Response::FORMAT_JSON;
+		$curl = new Curl();
+		$html = $curl->get('https://vnexmoney.com/');
+		//VND
+		$start1 = "<div class=\"vnd\">";
+		$end1 = "VND						</div>";
+		$currencyUnit = $curl->get_string_between_all($html, $start1, $end1);
+		//CURRENCY
+		$start2 = "<div class=\"currency\">";
+		$end2 = "						</div>";
+		$currency = $curl->get_string_between_all($html, $start2, $end2);
+		$result = array($currencyUnit, $currency);
+		return $result;
 
-	// 	//data bitcoin
-	// 	$string = $curl->get('https://vnexmoney.com/');
-	// 	$start = '<div class="vnd">';
-	// 	$end = '</div>';
-	// 	$data = $curl->get_string_between_all($string, $start, $end);
-	// 	$array = [];
-	// 	for ($i = 0; $i < count($data); $i++) {
-	// 		$item = preg_replace('/[^0-9,]/', '', $data[$i]);
-	// 		array_push($array, $item);
-	// 	}
-	// 	return $array;
-	// }
+	}
 
 	public function actionMuabantienao() {
 		\Yii::$app->response->format = Response::FORMAT_JSON;
@@ -493,5 +493,30 @@ class ShowController extends Controller {
 			'sellpm' => $result[1][2],
 		);
 		return $data1;
+	}
+	public function actionChimcugay() {
+		\Yii::$app->response->format = Response::FORMAT_JSON;
+		$curl = new Curl();
+		$html = $curl->get('https://chimcugay.com/');
+		$dataBuy = preg_match_all("/<span class\=\"fa fa-paper-plane-o\"><\/span>Mua vào: (.*?)<\/span>/si", $html, $resultSell);
+		$dataSell = preg_match_all("/<span class\=\"fa fa-plus\"><\/span>Bán ra: (.*?)<\/span>/si", $html, $resultBuy);
+		$buy = array(
+			'btcB' => $resultBuy[1][0],
+			'ethB' => $resultBuy[1][1],
+			'ltcB' => $resultBuy[1][2],
+			'xprB' => $resultBuy[1][3],
+		);
+		$sell = array(
+			'btcS' => $resultSell[1][0],
+			'ethS' => $resultSell[1][1],
+			'ltcS' => $resultSell[1][2],
+			'xprS' => $resultSell[1][3],
+		);
+		$kq = array(
+			'buy' => $buy,
+			'sell' => $sell,
+
+		);
+		return $kq;
 	}
 }

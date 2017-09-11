@@ -279,15 +279,6 @@ $(document).ready(function() {
             }
         });
 
-        //Vnxmoney
-        // $.ajax({
-        //     url: '../show/vnexmoney',
-        //     success: function (data) {
-        //         $("#vnexmoney_btc_buy").html(data[6]);
-        //         $("#vnexmoney_btc_sell").html(data[9]);
-
-        //     }
-        // });
 
         //Muabantienao
         $.ajax({
@@ -450,6 +441,71 @@ $(document).ready(function() {
             success: function (data) {
                 $("#bosspm_pm_buy").html(data.buypm);
                 $("#bosspm_pm_sell").html(data.sellpm);
+            }
+        });
+        //VNEXMONEY
+        $.ajax({
+            url: '../show/vnexmoney',
+            success: function(data){
+                //PM
+                $("#vnexmoney_pm_base1").html(data[1][20]);
+                $("#vnexmoney_pm_base2").html(data[1][21]);
+                $("#vnexmoney_pm_base3").html(data[1][22]);
+
+                $("#vnexmoney_pm_buy_base1").html(data[0][20]);
+                $("#vnexmoney_pm_buy_base2").html(data[0][21]);
+                $("#vnexmoney_pm_buy_base3").html(data[0][22]);
+
+                $("#vnexmoney_pm_sell_base1").html(data[0][23]);
+                $("#vnexmoney_pm_sell_base2").html(data[0][24]);
+                $("#vnexmoney_pm_sell_base3").html(data[0][25]);
+                //USDT
+                $("#vnexmoney_usdt_base1").html(data[1][0]);
+                $("#vnexmoney_usdt_base2").html(data[1][1]);
+                $("#vnexmoney_usdt_base3").html(data[1][2]);
+                $("#vnexmoney_usdt_base4").html(data[1][3]);
+                $("#vnexmoney_usdt_base5").html(data[1][4]);
+                $("#vnexmoney_usdt_base6").html(data[1][5]);
+                $("#vnexmoney_usdt_base7").html(data[1][6]);
+                $("#vnexmoney_usdt_base8").html(data[1][7]);
+                $("#vnexmoney_usdt_base9").html(data[1][8]);
+                $("#vnexmoney_usdt_base10").html(data[1][9]);
+
+                $("#vnexmoney_usdt_buy_base1").html(data[0][0]);
+                $("#vnexmoney_usdt_buy_base2").html(data[0][1]);
+                $("#vnexmoney_usdt_buy_base3").html(data[0][2]);
+                $("#vnexmoney_usdt_buy_base4").html(data[0][3]);
+                $("#vnexmoney_usdt_buy_base5").html(data[0][4]);
+                $("#vnexmoney_usdt_buy_base6").html(data[0][5]);
+                $("#vnexmoney_usdt_buy_base7").html(data[0][6]);
+                $("#vnexmoney_usdt_buy_base8").html(data[0][7]);
+                $("#vnexmoney_usdt_buy_base9").html(data[0][8]);
+                $("#vnexmoney_usdt_buy_base10").html(data[0][9]);
+
+                $("#vnexmoney_usdt_sell_base1").html(data[0][10]);
+                $("#vnexmoney_usdt_sell_base2").html(data[0][11]);
+                $("#vnexmoney_usdt_sell_base3").html(data[0][12]);
+                $("#vnexmoney_usdt_sell_base4").html(data[0][13]);
+                $("#vnexmoney_usdt_sell_base5").html(data[0][14]);
+                $("#vnexmoney_usdt_sell_base6").html(data[0][15]);
+                $("#vnexmoney_usdt_sell_base7").html(data[0][16]);
+                $("#vnexmoney_usdt_sell_base8").html(data[0][17]);
+                $("#vnexmoney_usdt_sell_base9").html(data[0][18]);
+                $("#vnexmoney_usdt_sell_base10").html(data[0][19]);
+
+                //BTC
+                $("#vnexmoney_btc_base1").html(data[1][34]);
+                $("#vnexmoney_btc_base2").html(data[1][35]);
+                $("#vnexmoney_btc_base3").html(data[1][36]);
+
+                $("#vnexmoney_btc_buy_base1").html(data[0][34]);
+                $("#vnexmoney_btc_buy_base2").html(data[0][35]);
+                $("#vnexmoney_btc_buy_base3").html(data[0][36]);
+
+                $("#vnexmoney_btc_sell_base1").html(data[0][37]);
+                $("#vnexmoney_btc_sell_base2").html(data[0][38]);
+                $("#vnexmoney_btc_sell_base3").html(data[0][39]);
+
             }
         });
 });
