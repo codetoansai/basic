@@ -7,9 +7,7 @@ echo $this->render('type-coin/btc.php');
 ?>
     </div>
     <div class="col-md-6">
-        <?php
-echo $this->render('type-coin/btce.php');
-?>
+<?php echo $this->render('type-coin/usdt.php'); ?>
     </div>
     <div class="">
 
@@ -81,13 +79,7 @@ echo $this->render('type-coin/xmr.php');
 ?>
     </div>
 </div>
-<div class="row">
-    <div class="col-md-6">
-        <?php
-echo $this->render('type-coin/usdt.php');
-?>
-    </div>
-</div>
+
 <?php
 
 $app_css = <<<CSS
