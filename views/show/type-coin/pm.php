@@ -71,7 +71,7 @@ PMUSD
             <p id="ex24h_pm_sell"></p>
         </td>
     </tr>
-    
+
     <tr>
         <td rowspan="3">
             <a href="https://www.exbtcvn.com/" target="_blank">Exbtcvn.com</a>
@@ -147,6 +147,20 @@ PMUSD
         </td>
         <td>
             <p id="muatienao_pm_sell"></p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="https://bosspm.com/" target="_blank">bosspm.com</a>
+        </td>
+        <td>
+
+        </td>
+        <td>
+            <p id="bosspm_pm_buy"></p>
+        </td>
+        <td>
+            <p id="bosspm_pm_sell"></p>
         </td>
     </tr>
 </table>
