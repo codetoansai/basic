@@ -3,13 +3,13 @@
 <div class="row">
     <div class="col-md-6">
         <?php
-        echo $this->render('type-coin/btc.php');
-        ?>
+echo $this->render('type-coin/btc.php');
+?>
     </div>
     <div class="col-md-6">
         <?php
-        echo $this->render('type-coin/btce.php');
-        ?>
+echo $this->render('type-coin/btce.php');
+?>
     </div>
     <div class="">
 
@@ -19,13 +19,13 @@
 <div class="row">
     <div class="col-md-6">
         <?php
-        echo $this->render('type-coin/dsh.php');
-        ?>
+echo $this->render('type-coin/dsh.php');
+?>
     </div>
     <div class="col-md-6">
         <?php
-        echo $this->render('type-coin/ltc.php');
-        ?>
+echo $this->render('type-coin/ltc.php');
+?>
 
     </div>
 </div>
@@ -33,27 +33,59 @@
 <div class="row">
     <div class="col-md-6">
         <?php
-        echo $this->render('type-coin/eth.php');
-        ?>
+echo $this->render('type-coin/eth.php');
+?>
     </div>
 
     <div class="col-md-6">
         <?php
-        echo $this->render('type-coin/wmz.php');
-        ?>
+echo $this->render('type-coin/wmz.php');
+?>
     </div>
 </div>
 
 <div class="row">
     <div class="col-md-6">
         <?php
-        echo $this->render('type-coin/pm.php');
-        ?>
+echo $this->render('type-coin/pm.php');
+?>
     </div>
     <div class="col-md-6">
         <?php
-        echo $this->render('type-coin/usdt.php');
-        ?>
+echo $this->render('type-coin/bch.php');
+?>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <?php
+echo $this->render('type-coin/zec.php');
+?>
+    </div>
+    <div class="col-md-6">
+        <?php
+echo $this->render('type-coin/etc.php');
+?>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <?php
+echo $this->render('type-coin/xrp.php');
+?>
+    </div>
+    <div class="col-md-6">
+        <?php
+echo $this->render('type-coin/xmr.php');
+?>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <?php
+echo $this->render('type-coin/usdt.php');
+?>
     </div>
 </div>
 <?php
@@ -83,10 +115,8 @@ table{
 CSS;
 $this->registerCss($app_css);
 
-
-
-$app_js= <<<JS
-$("#reset").click(function(){ 
+$app_js = <<<JS
+$("#reset").click(function(){
     location.reload();
 });
 $(document).ready(function() {
@@ -96,21 +126,25 @@ $(document).ready(function() {
             success: function (data) {
                 $("#exchange_btc_buy").html(data.data_buy[0]);
                 $("#exchange_btc_sell").html(data.data_sell[0]);
-                $("#exchange_btce_buy").html(data.data_buy[1]);
-                $("#exchange_btce_sell").html(data.data_sell[1]);
-                $("#exchange_dsh_buy").html(data.data_buy[2]);
-                $("#exchange_dsh_sell").html(data.data_sell[2]);
-                $("#exchange_eth_buy").html(data.data_buy[3]);
-                $("#exchange_eth_sell").html(data.data_sell[3]);
+                $("#exchange_bch_buy").html(data.data_buy[1]);
+                $("#exchange_bch_sell").html(data.data_sell[1]);
+                $("#exchange_zec_buy").html(data.data_buy[3]);
+                $("#exchange_zec_sell").html(data.data_sell[3]);
+                $("#exchange_eth_buy").html(data.data_buy[2]);
+                $("#exchange_eth_sell").html(data.data_sell[2]);
                 $("#exchange_ltc_buy").html(data.data_buy[4]);
-                $("#exchange_ltc_sell").html(data.data_sell[4]);
-                $("#exchange_wmz_buy").html(data.data_buy[6]);
-                $("#exchange_wmz_sell").html(data.data_sell[6]);
-                $("#exchange_pm_buy").html(data.data_buy[5]);
-                $("#exchange_pm_sell").html(data.data_sell[5]);
+                $("#exchange_ltc_sell").html(data.data_sell[5]);
+                $("#exchange_etc_buy").html(data.data_buy[5]);
+                $("#exchange_pm_buy").html(data.data_buy[6]);
+                $("#exchange_pm_sell").html(data.data_sell[6]);
+                $("#exchange_etc_buy").html(data.data_buy[5]);
+                $("#exchange_xmr_sell").html(data.data_sell[4]);
+                $("#exchange_xrp_buy").html(data.data_buy[7]);
+                $("#exchange_xrp_sell").html(data.data_sell[7]);
+
             }
-        });  
-        
+        });
+
         //Mmo4me
         $.ajax({
             url: '../show/mmo4me',
@@ -124,7 +158,9 @@ $(document).ready(function() {
                 var data_sell_wmz = Math.round(data.data_sell.wmz).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
                 var data_buy_pm = Math.round(data.data_buy.pm).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
                 var data_sell_pm = Math.round(data.data_sell.pm).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-                
+                var data_buy_eth = Math.round(data.data_buy.eth *1000).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                var data_sell_eth = Math.round(data.data_sell.eth*1000).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
                 $("#mmo4me_btc_buy").html(data_buy_btc);
                 $("#mmo4me_btc_sell").html(data_sell_btc);
                 $("#mmo4me_btce_buy").html(data_buy_btce);
@@ -133,9 +169,11 @@ $(document).ready(function() {
                 $("#mmo4me_wmz_sell").html(data_sell_wmz);
                 $("#mmo4me_pm_buy").html(data_buy_pm);
                 $("#mmo4me_pm_sell").html(data_sell_pm);
+                $("#mmo4me_eth_buy").html(data_buy_eth);
+                $("#mmo4me_eth_sell").html(data_sell_eth);
             }
-        });  
-        
+        });
+
         //Santienao
         $.ajax({
             url: '../show/santienao',
@@ -149,7 +187,9 @@ $(document).ready(function() {
                 var data_sell_wmz = Math.round(data.data_sell.wmz).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
                 var data_buy_pm = Math.round(data.data_buy.pm).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
                 var data_sell_pm = Math.round(data.data_sell.pm).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-                
+                var data_buy_eth = Math.round(data.data_buy.eth).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                var data_sell_eth = Math.round(data.data_sell.eth).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
                 $("#santienao_btc_buy").html(data_buy_btc);
                 $("#santienao_btc_sell").html(data_sell_btc);
                 $("#santienao_btce_buy").html(data_buy_btce);
@@ -160,9 +200,11 @@ $(document).ready(function() {
                 $("#santienao_wmz_sell").html(data_sell_wmz);
                 $("#santienao_pm_buy").html(data_buy_pm);
                 $("#santienao_pm_sell").html(data_sell_pm);
+                $("#santienao_eth_buy").html(data_buy_eth);
+                $("#santienao_eth_sell").html(data_sell_eth);
             }
-        });  
-        
+        });
+
         //Tiktaskbtc
         $.ajax({
             url: '../show/tiktakbtc',
@@ -173,44 +215,42 @@ $(document).ready(function() {
                 var eth_sell = data.data_sell.eth.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
                 var ltc_buy = data.data_buy.ltc.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
                 var ltc_sell = data.data_sell.ltc.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-                var usdt_buy = data.data_buy.usdt.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-                var usdt_sell = data.data_sell.usdt.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
                 $("#tiktakbtc_btc_buy").html(btc_buy);
                 $("#tiktakbtc_btc_sell").html(btc_sell);
+                // $("#tiktakbtc_btce_buy").html(data.data_buy.btce);
+                // $("#tiktakbtc_btce_sell").html(data.data_sell.btce);
                 $("#tiktakbtc_eth_buy").html(eth_buy);
                 $("#tiktakbtc_eth_sell").html(eth_sell);
                 $("#tiktakbtc_ltc_buy").html(ltc_buy);
                 $("#tiktakbtc_ltc_sell").html(ltc_sell);
-                 $("#tiktakbtc_usdt_buy").html(usdt_buy);
-                $("#tiktakbtc_usdt_sell").html(usdt_sell);
             }
-        });  
-        
+        });
+
         //Ex24h
         $.ajax({
             url: '../show/ex24h',
             success: function (data) {
                 //Fomat data
-                var data_buy_btc = data.data_buy.btc.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-                var data_sell_btc = data.data_sell.btc.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-                var data_buy_btce = data.data_buy.btce.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-                var data_sell_btce = data.data_sell.btce.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-                var data_buy_eth = data.data_buy.eth.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-                var data_sell_eth = data.data_sell.eth.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                // var data_buy_btc = data.data_buy.btc.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                // var data_sell_btc = data.data_sell.btc.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                // var data_buy_btce = data.data_buy.btce.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                // var data_sell_btce = data.data_sell.btce.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                // var data_buy_eth = data.data_buy.eth.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                // var data_sell_eth = data.data_sell.eth.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
                 var data_buy_pm = data.data_buy.pm.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
                 var data_sell_pm = data.data_sell.pm.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-                
-                $("#ex24h_btc_buy").html(data_buy_btc);
-                $("#ex24h_btc_sell").html(data_sell_btc);
-                $("#ex24h_btce_buy").html(data_buy_btce);
-                $("#ex24h_btce_sell").html(data_sell_btce);
-                $("#ex24h_eth_buy").html(data_buy_eth);
-                $("#ex24h_eth_sell").html(data_sell_eth);
+
+                // $("#ex24h_btc_buy").html(data_buy_btc);
+                // $("#ex24h_btc_sell").html(data_sell_btc);
+                // $("#ex24h_btce_buy").html(data_buy_btce);
+                // $("#ex24h_btce_sell").html(data_sell_btce);
+                // $("#ex24h_eth_buy").html(data_buy_eth);
+                // $("#ex24h_eth_sell").html(data_sell_eth);
                 $("#ex24h_pm_buy").html(data_buy_pm);
                 $("#ex24h_pm_sell").html(data_sell_pm);
             }
-        });  
-        
+        });
+
         //Bitcoinvietnam
         $.ajax({
             url: '../show/bitcoinvietnam',
@@ -218,51 +258,50 @@ $(document).ready(function() {
                 $("#bitcoinvietnam_btc_buy").html(data.btc_buy);
                 $("#bitcoinvietnam_btc_sell").html(data.btc_sell);
             }
-        });  
-        
+        });
+
         //Exbtcvn
         $.ajax({
             url: '../show/exbtcvn',
             success: function (data) {
-                // ETH base 
                 $("#exbtcvn_eth_base").html(data.eth_buy.from + " - " + data.eth_buy.to);
                 $("#exbtcvn_eth_buy_base").html(data.eth_buy.price);
                 $("#exbtcvn_eth_sell_base").html(data.eth_sell.price);
-                
-                
-                 
-                  // PM base 1
+
+
+
+                // PM base 1
                 $("#exbtcvn_pm_base1").html(data.pm_buy[0] + " - " + data.pm_buy[1]);
                 $("#exbtcvn_pm_buy_base1").html(data.pm_buy[2]);
                 $("#exbtcvn_pm_sell_base1").html(data.pm_sell[2]);
-                
+
                 //PM base 2
                 $("#exbtcvn_pm_base2").html(data.pm_buy[3] + " - " + data.pm_buy[4]);
                 $("#exbtcvn_pm_buy_base2").html(data.pm_buy[5]);
                 $("#exbtcvn_pm_sell_base2").html(data.pm_sell[5]);
-                
+
                 //PM base3
                  $("#exbtcvn_pm_base3").html(data.pm_buy[6] + " - " + data.pm_buy[7]);
                  $("#exbtcvn_pm_buy_base3").html(data.pm_buy[8]);
                  $("#exbtcvn_pm_sell_base3").html(data.pm_sell[8]);
             }
-        });  
-        
+        });
+
         //Vnxmoney
-        $.ajax({
-            url: '../show/vnexmoney',
-            success: function (data) {
-                $("#vnexmoney_btc_buy").html(data[6]);
-                $("#vnexmoney_btc_sell").html(data[9]);
-                
-            }
-        });  
-        
+        // $.ajax({
+        //     url: '../show/vnexmoney',
+        //     success: function (data) {
+        //         $("#vnexmoney_btc_buy").html(data[6]);
+        //         $("#vnexmoney_btc_sell").html(data[9]);
+
+        //     }
+        // });
+
         //Muabantienao
         $.ajax({
             url: '../show/muabantienao',
             success: function (data) {
-                
+
                 $("#muabantienao_btc_buy").html(data.data_buy[1][8]);
                 $("#muabantienao_btc_sell").html(data.data_sell[1][2]);
                 $("#muabantienao_usdt_buy").html(data.data_buy[0][8]);
@@ -275,16 +314,25 @@ $(document).ready(function() {
                 $("#muabantienao_eth_sell").html(data.data_sell[4][2]);
                 $("#muabantienao_wmz_buy").html(data.data_buy[14][8]);
                 $("#muabantienao_wmz_sell").html(data.data_sell[14][2]);
-                $("#muabantienao_pm_buy").html(data.data_buy[15][8]);
-                $("#muabantienao_pm_sell").html(data.data_sell[15][2]);
+                $("#muabantienao_bch_buy").html(data.data_buy[2][8]);
+                $("#muabantienao_bch_sell").html(data.data_sell[2][2]);
+                $("#muabantienao_zec_buy").html(data.data_buy[7][8]);
+                $("#muabantienao_zec_sell").html(data.data_sell[7][2]);
+                $("#muabantienao_etc_buy").html(data.data_buy[6][8]);
+                $("#muabantienao_etc_sell").html(data.data_sell[6][2]);
+                $("#muabantienao_xmr_buy").html(data.data_buy[9][8]);
+                $("#muabantienao_xmr_sell").html(data.data_sell[9][2]);
+                $("#muabantienao_xrp_buy").html(data.data_buy[3][8]);
+                $("#muabantienao_xrp_sell").html(data.data_sell[3][2]);
+
 
             }
-        });  
-        
+        });
+
         //Hamirex
         $.ajax({
             url: '../show/hamirex',
-            
+
             success: function (data) {
                 var obj = JSON.parse(data);
                 var btc_buy = obj.ask_btc.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -293,8 +341,8 @@ $(document).ready(function() {
                 $("#hamirex_btc_sell").html(btc_sell);
             }
         });
-        
-        
+
+
         //buyselleth
         $.ajax({
             url: '../show/buyselleth',
@@ -306,28 +354,28 @@ $(document).ready(function() {
                 $("#buyselleth_eth_sell").html(eth_sell);
             }
         });
-        
-        
+
+
         //thumuatienao
-        // $.ajax({
-        //     url: '../show/thumuatienao',
-        //     success: function (data) {
-        //         var btc_buy = Math.round(data[1].buy).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-        //         var btc_sell = Math.round(data[1].sell).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-        //         var btce_buy = data[0].buy.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-        //         var btce_sell = data[0].sell.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-        //         var eth_buy = Math.round(data[2].buy).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-        //         var eth_sell = Math.round(data[2].sell).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-                
-        //         $("#thumuatienao_btc_buy").html(btc_buy);
-        //         $("#thumuatienao_btc_sell").html(btc_sell);
-        //         $("#thumuatienao_btce_buy").html(btce_buy);
-        //         $("#thumuatienao_btce_sell").html(btce_sell);
-        //         $("#thumuatienao_eth_buy").html(eth_buy);
-        //         $("#thumuatienao_eth_sell").html(eth_sell);
-        //     }
-        // });
-        
+        $.ajax({
+            url: '../show/thumuatienao',
+            success: function (data) {
+                var btc_buy = Math.round(data[1].buy).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                var btc_sell = Math.round(data[1].sell).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                var btce_buy = data[0].buy.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                var btce_sell = data[0].sell.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                var eth_buy = Math.round(data[2].buy).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                var eth_sell = Math.round(data[2].sell).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+                $("#thumuatienao_btc_buy").html(btc_buy);
+                $("#thumuatienao_btc_sell").html(btc_sell);
+                $("#thumuatienao_btce_buy").html(btce_buy);
+                $("#thumuatienao_btce_sell").html(btce_sell);
+                $("#thumuatienao_eth_buy").html(eth_buy);
+                $("#thumuatienao_eth_sell").html(eth_sell);
+            }
+        });
+
         //vncex
         $.ajax({
             url: '../show/vncex',
@@ -340,7 +388,7 @@ $(document).ready(function() {
                 var eth_sell = data[1].Sell.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
                 var ltc_buy = data[2].Buy.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
                 var ltc_sell = data[2].Sell.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-                
+
                 $("#vncex_btc_buy").html(btc_buy);
                 $("#vncex_btc_sell").html(btc_sell);
                 $("#vncex_btce_buy").html(btce_buy);
@@ -352,10 +400,10 @@ $(document).ready(function() {
 
             }
         });
-        
+
         //muabitcoin
         $.ajax({
-                url: '../show/muabitcoin',
+            url: '../show/muabitcoin',
                 success: function (data) {
                 var obj = JSON.parse(data);
                 var btc_buy=Math.round(obj.btc.buy).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
@@ -370,20 +418,9 @@ $(document).ready(function() {
                 $("#muabitcoin_eth_sell").html(eth_sell);
                 $("#muabitcoin_ltc_buy").html(ltc_buy);
                 $("#muabitcoin_ltc_sell").html(ltc_sell);
-
             }
-
-            // url: '../show/muabitcoin',
-            // success: function (data) {
-            //     $("#muabitcoin_btc_buy").html(data.data_buy.btc);
-            //     $("#muabitcoin_btc_sell").html(data.data_sell.btc);
-            //     $("#muabitcoin_btce_buy").html(data.data_buy.btce);
-            //     $("#muabitcoin_btce_sell").html(data.data_sell.btce);
-            //     $("#muabitcoin_eth_buy").html(data.data_buy.eth);
-            //     $("#muabitcoin_eth_sell").html(data.data_sell.eth);
-            // }
         });
-        
+
         //banwmz
         $.ajax({
             url: '../show/banwmz',
@@ -392,7 +429,7 @@ $(document).ready(function() {
                 $("#banwmz_wmz_sell").html(data.sell);
             }
         });
-        
+
          //banpm
         $.ajax({
             url: '../show/banpm',
@@ -401,8 +438,8 @@ $(document).ready(function() {
                 $("#banpm_pm_sell").html(data.sell);
             }
         });
-        
-        
+
+
         //muatienao
         $.ajax({
             url: '../show/muatienao',
@@ -415,11 +452,15 @@ $(document).ready(function() {
                 $("#muatienao_wmz_sell").html(data.sell_wmz);
             }
         });
+        //Bosspm
+        $.ajax({
+            url: '../show/bosspm',
+            success: function (data) {
+                $("#bosspm_pm_buy").html(data.buypm);
+                $("#bosspm_pm_sell").html(data.sellpm);
+            }
+        });
 });
 JS;
 
 $this->registerJs($app_js);
-
-
-
-

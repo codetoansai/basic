@@ -15,7 +15,7 @@ BTCE
             Giá bán
         </th>
     </tr>
-    <tr>
+<!--     <tr>
         <td>
             <a href="https://exchangeno1.com/" target="_blank">Exchangeno1.com</a>
         </td>
@@ -28,7 +28,7 @@ BTCE
         <td>
             <p id="exchange_btce_sell"></p>
         </td>
-    </tr>
+    </tr> -->
     <tr>
         <td>
             <a href="https://mmo4me.com/" target="_blank">Mmo4me.com</a>
@@ -57,7 +57,21 @@ BTCE
             <p id="santienao_btce_sell"></p>
         </td>
     </tr>
-    <tr>
+<!--     <tr>
+        <td>
+            <a href="https://tiktakbtc.com/" target="_blank">Tiktakbtc.com</a>
+        </td>
+        <td>
+
+        </td>
+        <td>
+            <p id="tiktakbtc_btce_buy"></p>
+        </td>
+        <td>
+            <p id="tiktakbtc_btce_sell"></p>
+        </td>
+    </tr> -->
+<!--     <tr>
         <td>
             <a href="https://ex24h.com" target="_blank">Ex24h.com</a>
         </td>
@@ -70,8 +84,44 @@ BTCE
         <td>
             <p id="ex24h_btce_sell"></p>
         </td>
-    </tr>
-  <!--   <tr>
+    </tr> -->
+<!--     <tr>
+        <td rowspan="3">
+            <a href="https://www.exbtcvn.com/" target="_blank">Exbtcvn.com</a>
+        </td>
+        <td>
+            <p id="exbtcvn_btce_base1"></p>
+        </td>
+        <td>
+            <p id="exbtcvn_btce_buy_base1"></p>
+        </td>
+        <td>
+            <p id="exbtcvn_btce_sell_base1"></p>
+        </td>
+    </tr> -->
+<!--     <tr>
+        <td>
+            <p id="exbtcvn_btce_base2"></p>
+        </td>
+        <td>
+            <p id="exbtcvn_btce_buy_base2"></p>
+        </td>
+        <td>
+            <p id="exbtcvn_btce_sell_base2"></p>
+        </td>
+    </tr> -->
+<!--     <tr>
+        <td>
+            <p id="exbtcvn_btce_base3"></p>
+        </td>
+        <td>
+            <p id="exbtcvn_btce_buy_base3"></p>
+        </td>
+        <td>
+            <p id="exbtcvn_btce_sell_base3"></p>
+        </td>
+    </tr> -->
+<!--     <tr>
         <td>
             <a href="https://thumuatienao.com" target="_blank">Thumuatienao.com</a>
         </td>
@@ -98,7 +148,7 @@ BTCE
         <td>
             <p id="muabantienao_btce_sell"></p>
         </td>
-    </tr>  -->
+    </tr> -->
 <!--    <tr>-->
 <!--        <td>-->
 <!--            <a href="https://vncex.com" target="_blank">Vncex.com</a>-->
@@ -113,5 +163,30 @@ BTCE
 <!--            <p id="vncex_btce_sell"></p>-->
 <!--        </td>-->
 <!--    </tr>-->
-
+<!--     <tr>
+        <td>
+            <a href="https://www.mua-bitcoin.com/login.aspx" target="_blank">Mua-bitcoin.com</a>
+        </td>
+        <td>
+        </td>
+        <td>
+            <p id="muabitcoin_btce_buy"></p>
+        </td>
+        <td>
+            <p id="muabitcoin_btce_sell"></p>
+        </td>
+    </tr> -->
+<!--     <tr>
+        <td>
+            <a href="https://muatienao.com" target="_blank">Muatienao.com</a>
+        </td>
+        <td>
+        </td>
+        <td>
+            <p id="muatienao_btce_buy"></p>
+        </td>
+        <td>
+            <p id="muatienao_btce_sell"></p>
+        </td>
+    </tr> -->
 </table>

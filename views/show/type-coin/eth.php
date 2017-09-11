@@ -31,6 +31,35 @@ ETH
     </tr>
     <tr>
         <td>
+            <a href="https://santienao.com/" target="_blank">Santienao.com</a>
+        </td>
+        <td>
+
+        </td>
+        <td>
+            <p id="santienao_eth_buy"></p>
+        </td>
+        <td>
+            <p id="santienao_eth_sell"></p>
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            <a href="https://mmo4me.com/" target="_blank">Mmo4me.com</a>
+        </td>
+        <td>
+
+        </td>
+        <td>
+            <p id="mmo4me_eth_buy"></p>
+        </td>
+        <td>
+            <p id="mmo4me_eth_sell"></p>
+        </td>
+    </tr>
+    <tr>
+        <td>
             <a href="https://tiktakbtc.com/" target="_blank">Tiktakbtc.com</a>
         </td>
         <td>
@@ -43,7 +72,7 @@ ETH
             <p id="tiktakbtc_eth_sell"></p>
         </td>
     </tr>
-    <tr>
+<!--     <tr>
         <td>
             <a href="https://ex24h.com" target="_blank">Ex24h.com</a>
         </td>
@@ -56,7 +85,7 @@ ETH
         <td>
             <p id="ex24h_eth_sell"></p>
         </td>
-    </tr>
+    </tr> -->
     <tr>
         <td>
             <a href="https://www.exbtcvn.com/" target="_blank">Exbtcvn.com</a>

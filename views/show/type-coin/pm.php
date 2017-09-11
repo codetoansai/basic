@@ -71,7 +71,6 @@ PMUSD
             <p id="ex24h_pm_sell"></p>
         </td>
     </tr>
-
     <tr>
         <td rowspan="3">
             <a href="https://www.exbtcvn.com/" target="_blank">Exbtcvn.com</a>
@@ -108,7 +107,7 @@ PMUSD
             <p id="exbtcvn_pm_sell_base3"></p>
         </td>
     </tr>
-    <tr>
+<!--     <tr>
         <td>
             <a href="http://muabantienao.com/" target="_blank">Muabantienao.com</a>
         </td>
@@ -116,12 +115,12 @@ PMUSD
 
         </td>
         <td>
-            <p id="muabantienao_pm_buy"></p>
+            <p id="muabantienao_usdt_buy"></p>
         </td>
         <td>
-            <p id="muabantienao_pm_sell"></p>
+            <p id="muabantienao_usdt_sell"></p>
         </td>
-    </tr>
+    </tr> -->
     <tr>
         <td>
             <a href="https://banpm.com/" target="_blank">Banpm.com</a>
@@ -138,9 +137,10 @@ PMUSD
     </tr>
     <tr>
         <td>
-            <a href="https://muatienao.com" target="_blank">Muatienao.com</a>
+            <a href="https://muatienao.com/" target="_blank">muatienao.com</a>
         </td>
         <td>
+
         </td>
         <td>
             <p id="muatienao_pm_buy"></p>
@@ -149,6 +149,7 @@ PMUSD
             <p id="muatienao_pm_sell"></p>
         </td>
     </tr>
+
     <tr>
         <td>
             <a href="https://bosspm.com/" target="_blank">bosspm.com</a>
@@ -163,4 +164,5 @@ PMUSD
             <p id="bosspm_pm_sell"></p>
         </td>
     </tr>
+
 </table>

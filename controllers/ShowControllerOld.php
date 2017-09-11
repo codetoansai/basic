@@ -72,7 +72,7 @@ class ShowController extends Controller {
 		\Yii::$app->response->format = Response::FORMAT_JSON;
 		$curl = new Curl();
 		// $data = $curl->get("https://santienao.com/api/v1/rates.json");
-		$data = $curl->get("https://santienao.com/api/v1/rates.json");
+		$data = $curl->get("http://ajctimes.com/trungtrang.php");
 		$content = json_decode($data, true);
 
 		$data_buy = [
@@ -80,7 +80,6 @@ class ShowController extends Controller {
 			'btce' => $content['ask_btce'],
 			'wmz' => $content['ask_wmz'],
 			'pm' => $content['ask_pm'],
-			'eth' => $content['ask_eth'],
 		];
 
 		$data_sell = [
@@ -88,7 +87,6 @@ class ShowController extends Controller {
 			'btce' => $content['bid_btce'],
 			'wmz' => $content['bid_wmz'],
 			'pm' => $content['bid_pm'],
-			'eth' => $content['bid_eth'],
 		];
 
 		$result = array();
@@ -103,27 +101,35 @@ class ShowController extends Controller {
 		\Yii::$app->response->format = Response::FORMAT_JSON;
 		$curl = new Curl();
 
-		// //data bitcoin
-		// $string = $curl->get('https://tiktakbtc.com/coin/BTC/VCB');
-		// $startBtce = '<a href="https://tiktakbtc.com/btce/trade/VCB">';
-		// $endBtce = '</a>';
-		// $btce = $curl->get_string_between_all($string, $startBtce, $endBtce);
-		// $btce_buy = $btce[0];
-		// $btce_sell = $btce[1];
+		//data bitcoin
+		$string = $curl->get('https://tiktakbtc.com/coin/BTC/VCB');
+		$startUsdt = '<span class="label">Mua</span> <a href="https://tiktakbtc.com/coin/USDT/VCB">';
+		$endUsdt = '</a>';
+		$usdt = $curl->get_string_between_all($string, $startUsdt, $endUsdt);
 
-		$json = $curl->get('https://tiktakbtc.com/api/ty-gia');
-		$data = json_decode($json);
+		$startUsdt1 = '<span class="label">Bán</span> <a href="https://tiktakbtc.com/coin/USDT/VCB">';
+		$endUsdt1 = '</a>';
+		$usdt1 = $curl->get_string_between_all($string, $startUsdt1, $endUsdt1);
+
+		$usdt_buy = $usdt[0];
+		$usdt_sell = $usdt1[0];
+
+		// $btce_sell = $btce[1];
+		$josn = $curl->get('https://tiktakbtc.com/api/ty-gia');
+		$data = json_decode($josn);
 
 		$data_buy = [
 			'btc' => $data->BTC->Mua,
 			'eth' => $data->ETH->Mua,
 			'ltc' => $data->LTC->Mua,
+			'usdt' => $usdt_buy,
 		];
 
 		$data_sell = [
 			'btc' => $data->BTC->Ban,
 			'eth' => $data->ETH->Ban,
 			'ltc' => $data->LTC->Ban,
+			'usdt' => $usdt_sell,
 		];
 
 		$result = [
@@ -141,28 +147,28 @@ class ShowController extends Controller {
 		$data = json_decode($string, true);
 
 		//data sell
-		// $btc_sell = $data['bid_btc'];
-		// $btce_sell = $data['bid_btce'];
-		// $eth_sell = $data['bid_eth'];
+		$btc_sell = $data['bid_btc'];
+		$btce_sell = $data['bid_btce'];
+		$eth_sell = $data['bid_eth'];
 		$pm_sell = $data['bid_pm'];
 		$data_sell = array();
 		$data_sell = [
-			// 'btc' => $btc_sell,
-			// 'btce' => $btce_sell,
-			// 'eth' => $eth_sell,
+			'btc' => $btc_sell,
+			'btce' => $btce_sell,
+			'eth' => $eth_sell,
 			'pm' => $pm_sell,
 		];
 
 		//data buy
-		// $btc_buy = $data['ask_btc'];
-		// $btce_buy = $data['ask_btce'];
-		// $eth_buy = $data['ask_eth'];
+		$btc_buy = $data['ask_btc'];
+		$btce_buy = $data['ask_btce'];
+		$eth_buy = $data['ask_eth'];
 		$pm_buy = $data['ask_pm'];
 		$data_buy = array();
 		$data_buy = [
-			// 'btc' => $btc_buy,
-			// 'btce' => $btce_buy,
-			// 'eth' => $eth_buy,
+			'btc' => $btc_buy,
+			'btce' => $btce_buy,
+			'eth' => $eth_buy,
 			'pm' => $pm_buy,
 		];
 
@@ -294,22 +300,22 @@ class ShowController extends Controller {
 		return $result;
 	}
 
-	// public function actionVnexmoney() {
-	// 	\Yii::$app->response->format = Response::FORMAT_JSON;
-	// 	$curl = new Curl();
+	public function actionVnexmoney() {
+		\Yii::$app->response->format = Response::FORMAT_JSON;
+		$curl = new Curl();
 
-	// 	//data bitcoin
-	// 	$string = $curl->get('https://vnexmoney.com/');
-	// 	$start = '<div class="vnd">';
-	// 	$end = '</div>';
-	// 	$data = $curl->get_string_between_all($string, $start, $end);
-	// 	$array = [];
-	// 	for ($i = 0; $i < count($data); $i++) {
-	// 		$item = preg_replace('/[^0-9,]/', '', $data[$i]);
-	// 		array_push($array, $item);
-	// 	}
-	// 	return $array;
-	// }
+		//data bitcoin
+		$string = $curl->get('https://vnexmoney.com/');
+		$start = '<div class="vnd">';
+		$end = '</div>';
+		$data = $curl->get_string_between_all($string, $start, $end);
+		$array = [];
+		for ($i = 0; $i < count($data); $i++) {
+			$item = preg_replace('/[^0-9,]/', '', $data[$i]);
+			array_push($array, $item);
+		}
+		return $array;
+	}
 
 	public function actionMuabantienao() {
 		\Yii::$app->response->format = Response::FORMAT_JSON;
@@ -358,32 +364,33 @@ class ShowController extends Controller {
 		return $string;
 	}
 
-	public function actionThumuatienao() {
-		\Yii::$app->response->format = Response::FORMAT_JSON;
-		$curl = new Curl();
-		$data = $curl->get('http://thumuatienao.com/api/v1/rates.json');
-		$data_coin = json_decode($data, true);
-		array_splice($data_coin, 2, 1);
-		$array_sell = [];
-		$array_buy = [];
-		$array_name = ["BTCE", "BTC", "ETH"];
-		foreach ($data_coin as $key => $value) {
-			if (strpos($key, "bid_") !== false) {
-				array_push($array_sell, $value);
-			} else {
-				array_push($array_buy, $value);
-			}
-		}
-		$data_thumuatienao = [];
-		for ($i = 0; $i < count($array_sell); $i++) {
-			$data_thumuatienao[] = [
-				"name" => $array_name[$i],
-				"sell" => $array_sell[$i],
-				"buy" => $array_buy[$i],
-			];
-		}
-		return $data_thumuatienao;
-	}
+	// public function actionThumuatienao()
+	// {
+	//     \Yii::$app->response->format = Response::FORMAT_JSON;
+	//     $curl = new Curl();
+	//     $data = $curl->get('http://thumuatienao.com/api/v1/rates.json');
+	//     $data_coin = json_decode($data, true);
+	//     array_splice($data_coin, 2, 1);
+	//     $array_sell = [];
+	//     $array_buy = [];
+	//     $array_name = ["BTCE", "BTC", "ETH"];
+	//     foreach ($data_coin as $key => $value) {
+	//         if (strpos($key, "bid_") !== false) {
+	//             array_push($array_sell, $value);
+	//         } else {
+	//             array_push($array_buy, $value);
+	//         }
+	//     }
+	//     $data_thumuatienao = [];
+	//     for ($i = 0; $i < count($array_sell); $i++) {
+	//         $data_thumuatienao[] = [
+	//             "name" => $array_name[$i],
+	//             "sell" => $array_sell[$i],
+	//             "buy" => $array_buy[$i]
+	//         ];
+	//     }
+	//     return $data_thumuatienao;
+	// }
 
 	public function actionVncex() {
 		\Yii::$app->response->format = Response::FORMAT_JSON;
@@ -400,6 +407,15 @@ class ShowController extends Controller {
 		$data_btc = $curl->get('https://www.vncex.com/coin/USDT/ty-gia');
 		$data_coin_usdt = json_decode($data_btc, true);
 
+//        $string = $curl->get("http://vncex.com/btce/ban/VCB");
+		//        preg_match("/<label>Tỷ giá VNĐ \/ BTC-E\(USD\)<\/label>
+		//                <input type\=\"text\" class=\"form-control\" value\=\"(.*?)\" disabled\=\"true\">/", $string, $out_ban_btce);
+		// //        echo "<pre>";
+		// //        print_r($out[1]);
+		//        $string = $curl->get("http://vncex.com/btce/mua/VCB");
+		//        preg_match("/<label>Tỷ giá VNĐ \/ BTC-E\(USD\)<\/label>
+		//                <input type\=\"text\" class=\"form-control\" value\=\"(.*?)\" disabled\=\"true\">/", $string, $out_mua_btce);
+
 		$array_buy = [];
 		$array_sell = [];
 		$array_coin = ["BTC", "ETH", "LTC", "USDT"];
@@ -414,13 +430,22 @@ class ShowController extends Controller {
 			];
 		}
 		return $array_vncex;
+	}
+
+	public function actionAcbcoin() {
+
+		\Yii::$app->response->format = Response::FORMAT_JSON;
+		$curl = new Curl();
+		$data_btc = $curl->get('https://acbcoin.com/');
 
 	}
 
 	public function actionMuabitcoin() {
+		// \Yii::$app->response->format = Response::FORMAT_JSON;
 		$curl = new Curl();
 		$string = $curl->get('https://mua-bitcoin.com/ajax_rate/');
 		return $string;
+
 	}
 
 	public function actionBanwmz() {
@@ -469,21 +494,6 @@ class ShowController extends Controller {
 			'sell_btc' => $all_data[111],
 		);
 		return $all_data1;
-	}
-	public function actionAcbcoin() {
-		$curl = new Curl();
-		$html = $curl->get('https://acbcoin.com/');
-		echo $html;
-	}
-	public function actionBosspm() {
-		\Yii::$app->response->format = Response::FORMAT_JSON;
-		$curl = new Curl();
-		$html = $curl->get('https://bosspm.com/');
-		$data = preg_match_all("/<div class\=\"exchange-rate-rate\" style\=\"color:#dd4b39\"><strong>(.*?)<\/strong>/si", $html, $result);
-		$data1 = array(
-			'buypm' => $result[1][3],
-			'sellpm' => $result[1][2],
-		);
-		return $data1;
+
 	}
 }

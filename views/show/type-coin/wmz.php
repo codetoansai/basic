@@ -15,7 +15,7 @@ WMZ
             Giá bán
         </th>
     </tr>
-    <tr>
+<!--     <tr>
         <td>
             <a href="https://exchangeno1.com/" target="_blank">Exchangeno1.com</a>
         </td>
@@ -28,7 +28,7 @@ WMZ
         <td>
             <p id="exchange_wmz_sell"></p>
         </td>
-    </tr>
+    </tr> -->
     <tr>
         <td>
             <a href="https://mmo4me.com/" target="_blank">Mmo4me.com</a>

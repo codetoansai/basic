@@ -69,7 +69,7 @@ BTC
             <p id="tiktakbtc_btc_sell"></p>
         </td>
     </tr>
-    <tr>
+<!--     <tr>
         <td>
             <a href="https://ex24h.com/" target="_blank">Ex24h.com</a>
         </td>
@@ -81,7 +81,7 @@ BTC
         <td>
             <p id="ex24h_btc_sell"></p>
         </td>
-    </tr>
+    </tr> -->
     <tr>
         <td>
             <a href="https://bitcoin.vn/" target="_blank">Bitcoin.vn</a>
@@ -95,7 +95,20 @@ BTC
             <p id="bitcoinvietnam_btc_sell"></p>
         </td>
     </tr>
-    <tr>
+<!--     <tr>
+        <td>
+            <a href="https://www.exbtcvn.com/" target="_blank">Exbtcvn.com</a>
+        </td>
+        <td>
+        </td>
+        <td>
+            <p id="exbtcvn_btc_buy"></p>
+        </td>
+        <td>
+            <p id="exbtcvn_btc_sell"></p>
+        </td>
+    </tr> -->
+<!--     <tr>
         <td>
             <a href="https://vnexmoney.com/" target="_blank">Vnxmoney.com</a>
         </td>
@@ -107,7 +120,7 @@ BTC
         <td>
             <p id="vnexmoney_btc_sell"></p>
         </td>
-    </tr>
+    </tr> -->
     <tr>
         <td>
             <a href="http://muabantienao.com/" target="_blank">Muabantienao.com</a>
@@ -146,8 +159,8 @@ BTC
         <td>
             <p id="thumuatienao_btc_sell"></p>
         </td>
-    </tr> -->
-<!--    <tr>-->
+    </tr>
+ --><!--    <tr>-->
 <!--        <td>-->
 <!--            <a href="https://vncex.com/" target="_blank">Vncex.com</a>-->
 <!--        </td>-->

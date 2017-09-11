@@ -1,4 +1,4 @@
-LTC
+ETC
 <br><br>
 <table>
     <tr>
@@ -23,25 +23,24 @@ LTC
 
         </td>
         <td>
-            <p id="exchange_ltc_buy"></p>
+            <p id="exchange_etc_buy"></p>
         </td>
         <td>
-            <p id="exchange_ltc_sell"></p>
+            <p id="exchange_etc_sell"></p>
         </td>
     </tr>
-
-        <tr>
+    <tr>
         <td>
-            <a href="https://tiktakbtc.com/" target="_blank">Tiktakbtc.com</a>
+            <a href="https://muabantienao.com/" target="_blank">muabantienao.com</a>
         </td>
         <td>
 
         </td>
         <td>
-            <p id="tiktakbtc_ltc_buy"></p>
+            <p id="muabantienao_etc_buy"></p>
         </td>
         <td>
-            <p id="tiktakbtc_ltc_sell"></p>
+            <p id="muabantienao_etc_sell"></p>
         </td>
     </tr>
 <!--    <tr>-->
@@ -58,7 +57,7 @@ LTC
 <!--            <p id="vncex_ltc_sell"></p>-->
 <!--        </td>-->
 <!--    </tr>-->
-    <tr>
+<!--     <tr>
         <td>
             <a href="http://muabantienao.com/" target="_blank">Muabantienao.com</a>
         </td>
@@ -71,6 +70,6 @@ LTC
         <td>
             <p id="muabantienao_ltc_sell"></p>
         </td>
-    </tr>
+    </tr> -->
 
 </table>
