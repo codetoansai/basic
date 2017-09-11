@@ -209,8 +209,8 @@ $(document).ready(function() {
                 var ltc_sell = data.data_sell.ltc.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
                 $("#tiktakbtc_btc_buy").html(btc_buy);
                 $("#tiktakbtc_btc_sell").html(btc_sell);
-                // $("#tiktakbtc_btce_buy").html(data.data_buy.btce);
-                // $("#tiktakbtc_btce_sell").html(data.data_sell.btce);
+                $("#tiktakbtc_usdt_buy").html(data.data_buy.usdt);
+                $("#tiktakbtc_usdt_sell").html(data.data_sell.usdt);
                 $("#tiktakbtc_eth_buy").html(eth_buy);
                 $("#tiktakbtc_eth_sell").html(eth_sell);
                 $("#tiktakbtc_ltc_buy").html(ltc_buy);

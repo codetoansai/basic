@@ -103,27 +103,35 @@ class ShowController extends Controller {
 		\Yii::$app->response->format = Response::FORMAT_JSON;
 		$curl = new Curl();
 
-		// //data bitcoin
-		// $string = $curl->get('https://tiktakbtc.com/coin/BTC/VCB');
-		// $startBtce = '<a href="https://tiktakbtc.com/btce/trade/VCB">';
-		// $endBtce = '</a>';
-		// $btce = $curl->get_string_between_all($string, $startBtce, $endBtce);
-		// $btce_buy = $btce[0];
-		// $btce_sell = $btce[1];
+		//data bitcoin
+		$string = $curl->get('https://tiktakbtc.com/coin/BTC/VCB');
+		$startUsdt = '<span class="label">Mua</span> <a href="https://tiktakbtc.com/coin/USDT/VCB">';
+		$endUsdt = '</a>';
+		$usdt = $curl->get_string_between_all($string, $startUsdt, $endUsdt);
 
-		$json = $curl->get('https://tiktakbtc.com/api/ty-gia');
-		$data = json_decode($json);
+		$startUsdt1 = '<span class="label">Bán</span> <a href="https://tiktakbtc.com/coin/USDT/VCB">';
+		$endUsdt1 = '</a>';
+		$usdt1 = $curl->get_string_between_all($string, $startUsdt1, $endUsdt1);
+
+		$usdt_buy = $usdt[0];
+		$usdt_sell = $usdt1[0];
+
+		// $btce_sell = $btce[1];
+		$josn = $curl->get('https://tiktakbtc.com/api/ty-gia');
+		$data = json_decode($josn);
 
 		$data_buy = [
 			'btc' => $data->BTC->Mua,
 			'eth' => $data->ETH->Mua,
 			'ltc' => $data->LTC->Mua,
+			'usdt' => $usdt_buy,
 		];
 
 		$data_sell = [
 			'btc' => $data->BTC->Ban,
 			'eth' => $data->ETH->Ban,
 			'ltc' => $data->LTC->Ban,
+			'usdt' => $usdt_sell,
 		];
 
 		$result = [

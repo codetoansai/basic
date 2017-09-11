@@ -29,33 +29,19 @@ USDT
             <p id="muabantienao_usdt_sell"></p>
         </td>
     </tr>
-<!--    <tr>-->
-<!--        <td>-->
-<!--            <a href="https://vncex.com/" target="_blank">Vncex.com</a>-->
-<!--        </td>-->
-<!--        <td>-->
-<!---->
-<!--        </td>-->
-<!--        <td>-->
-<!--            <p id="vncex_ltc_buy"></p>-->
-<!--        </td>-->
-<!--        <td>-->
-<!--            <p id="vncex_ltc_sell"></p>-->
-<!--        </td>-->
-<!--    </tr>-->
-<!--     <tr>
+    <tr>
         <td>
-            <a href="http://muabantienao.com/" target="_blank">Muabantienao.com</a>
+            <a href="http://tiktakbtc.com/" target="_blank">tiktakbtc.com</a>
         </td>
         <td>
 
         </td>
         <td>
-            <p id="muabantienao_ltc_buy"></p>
+            <p id="tiktakbtc_usdt_buy"></p>
         </td>
         <td>
-            <p id="muabantienao_ltc_sell"></p>
+            <p id="tiktakbtc_usdt_sell"></p>
         </td>
-    </tr> -->
+    </tr>
 
 </table>
