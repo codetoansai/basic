@@ -264,4 +264,19 @@ BTC
         </td>
 
     </tr>
+    <tr>
+        <td>
+            <a href="https://remitano.com/vn" target="_blank">Remitano</a>
+        </td>
+        <td>
+           <br />
+        </td>
+        <td>
+            <p id="remitano_btc_buy"></p>
+        </td>
+        <td>
+            <p id="remitano_btc_sell"></p>
+        </td>
+
+    </tr>
 </table>

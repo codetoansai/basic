@@ -561,4 +561,13 @@ class ShowController extends Controller {
 		);
 		return $kq;
 	}
+	public function actionRemitano() {
+		\Yii::$app->response->format = Response::FORMAT_JSON;
+		$curl = new Curl();
+		$html = $curl->get('https://eth.remitano.com/vn');
+		$start = '"USD"},"vn":';
+		$end = ',"za"';
+		$data = $curl->get_string_between($html, $start, $end);
+		return json_decode($data, true);
+	}
 }

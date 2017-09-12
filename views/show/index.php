@@ -534,6 +534,25 @@ $(document).ready(function() {
 
             }
         });
+
+        //Remitano
+        $.ajax({
+            url: '../show/remitano',
+            success: function (data) {
+                //Fomat data
+                var data_buy_btc = Math.round(data.btc_ask).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                var data_sell_btc = Math.round(data.btc_bid).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                var data_buy_eth = Math.round(data.eth_ask).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                var data_sell_eth = Math.round(data.eth_bid).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+
+                $("#remitano_btc_buy").html(data_buy_btc);
+                $("#remitano_btc_sell").html(data_sell_btc);
+                $("#remitano_eth_buy").html(data_buy_eth);
+                $("#remitano_eth_sell").html(data_sell_eth);
+
+            }
+        });
 });
 JS;
 
