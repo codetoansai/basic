@@ -134,7 +134,7 @@ BTC
             <p id="muabantienao_btc_sell"></p>
         </td>
     </tr>
-    <tr>
+<!--     <tr>
         <td>
             <a href="https://hamirex.org/" target="_blank">Hamirex.org</a>
         </td>
@@ -147,7 +147,7 @@ BTC
             <p id="hamirex_btc_sell"></p>
         </td>
     </tr>
-    <tr>
+ -->    <tr>
         <td>
             <a href="https://chimcugay.com/" target="_blank">Chimcugay.com</a>
         </td>

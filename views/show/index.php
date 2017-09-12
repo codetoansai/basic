@@ -313,17 +313,17 @@ $(document).ready(function() {
         });
 
         //Hamirex
-        $.ajax({
-            url: '../show/hamirex',
+        // $.ajax({
+        //     url: '../show/hamirex',
 
-            success: function (data) {
-                var obj = JSON.parse(data);
-                var btc_buy = obj.ask_btc.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-                var btc_sell = obj.bid_btc.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-                $("#hamirex_btc_buy").html(btc_buy);
-                $("#hamirex_btc_sell").html(btc_sell);
-            }
-        });
+        //     success: function (data) {
+        //         var obj = JSON.parse(data);
+        //         var btc_buy = obj.ask_btc.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        //         var btc_sell = obj.bid_btc.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        //         $("#hamirex_btc_buy").html(btc_buy);
+        //         $("#hamirex_btc_sell").html(btc_sell);
+        //     }
+        // });
 
 
         //buyselleth
