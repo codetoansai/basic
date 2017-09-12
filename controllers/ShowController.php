@@ -478,6 +478,51 @@ class ShowController extends Controller {
 		);
 		return $all_data1;
 	}
+	public function actionAcbcoin() {
+		\Yii::$app->response->format = Response::FORMAT_JSON;
+		$curl = new Curl();
+		$html = $curl->get('https://acbcoin.com/');
+
+		$start="var __dataPrice =";
+		$end=";";
+		$all_data = $curl->get_string_between($html,$start,$end);
+		$data=json_decode($all_data, true);
+		// $data_btc=[
+		// 	'sell_btc' => $data['TyGiaUSDMua'],
+		// 	'buy_btc' => $data['TyGiaUSDBan']
+		// ];
+		
+		$start_id_btc='\"id\":121,\"last\":\"';
+		$end_id_btc='\"';
+		$data_last_btc = $curl->get_string_between($html,$start_id_btc,$end_id_btc);
+
+		$start_id_eth='\"id\":149,\"last\":\"';
+		$end_id_eth='\"';
+
+		$data_last_eth = $curl->get_string_between($html,$start_id_eth,$end_id_eth);
+		// echo"<pre>";
+		// print_r($data_last_eth);
+		$data_last_btc1=round($data_last_btc,2);
+		$data_last_eth1=round($data_last_eth,2);
+
+		$sell_btc=$data['TyGiaUSDMua'] * $data_last_btc1 ;
+		$buy_btc=$data['TyGiaUSDBan'] * $data_last_btc1;
+		$see_sell_btc=floor($sell_btc-($sell_btc * 0.005));
+		$see_buy_btc=floor($buy_btc+($buy_btc * 0.005));
+		
+		$sell_eth=$data['TyGiaUSDMuaETH'] * $data_last_eth1 ;
+		$buy_eth=$data['TyGiaUSDBanETH'] * $data_last_eth1;
+		$see_sell_eth=floor($sell_eth-($sell_eth * 0.005));
+		$see_buy_eth=floor($buy_eth+($buy_eth * 0.005));
+
+		$data=[
+			'sell_btc' => number_format($see_sell_btc,0),
+			'buy_btc' => number_format($see_buy_btc,0),
+			'sell_eth' => number_format($see_sell_eth,0),
+			'buy_eth'  => number_format($see_buy_eth,0)
+		];
+		return $data;
+	}
 	public function actionBosspm() {
 		\Yii::$app->response->format = Response::FORMAT_JSON;
 		$curl = new Curl();

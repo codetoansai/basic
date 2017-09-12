@@ -523,6 +523,17 @@ $(document).ready(function() {
 
             }
         });
+        //acbcoin.com
+        $.ajax({
+            url: '../show/acbcoin',
+            success: function (data) {
+                $("#acb_buy_btc").html(data.buy_btc);
+                $("#acb_sell_btc").html(data.sell_btc);
+                $("#acb_buy_eth").html(data.buy_eth);
+                $("#acb_sell_eth").html(data.sell_eth);
+
+            }
+        });
 });
 JS;
 
