@@ -478,11 +478,6 @@ class ShowController extends Controller {
 		);
 		return $all_data1;
 	}
-	public function actionAcbcoin() {
-		$curl = new Curl();
-		$html = $curl->get('https://acbcoin.com/');
-		echo $html;
-	}
 	public function actionBosspm() {
 		\Yii::$app->response->format = Response::FORMAT_JSON;
 		$curl = new Curl();
