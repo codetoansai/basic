@@ -482,8 +482,7 @@ $(document).ready(function() {
                 $("#vnexmoney_usdt_buy_base9").html(data[0][8]);
                 $("#vnexmoney_usdt_buy_base10").html(data[0][9]);
 
-                $("#vnexmoney_usdt_sell_base1").html(data[0][10]);
-                $("#vnexmoney_usdt_sell_base2").html(data[0][11]);
+
                 $("#vnexmoney_usdt_sell_base3").html(data[0][12]);
                 $("#vnexmoney_usdt_sell_base4").html(data[0][13]);
                 $("#vnexmoney_usdt_sell_base5").html(data[0][14]);
@@ -492,6 +491,8 @@ $(document).ready(function() {
                 $("#vnexmoney_usdt_sell_base8").html(data[0][17]);
                 $("#vnexmoney_usdt_sell_base9").html(data[0][18]);
                 $("#vnexmoney_usdt_sell_base10").html(data[0][19]);
+                $("#vnexmoney_usdt_sell_base1").html(data[0][20]);
+                $("#vnexmoney_usdt_sell_base2").html(data[0][21]);
 
                 //BTC
                 $("#vnexmoney_btc_base1").html(data[1][38]);
