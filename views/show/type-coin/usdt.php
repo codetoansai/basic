@@ -43,6 +43,20 @@ USDT
             <p id="tiktakbtc_usdt_sell"></p>
         </td>
     </tr>
+    <tr>
+        <td>
+            <a href="http://chimcugay.com/" target="_blank">chimcugay.com</a>
+        </td>
+        <td>
+
+        </td>
+        <td>
+            <p id="chimcugay_usdt_buy"></p>
+        </td>
+        <td>
+            <p id="chimcugay_usdt_sell"></p>
+        </td>
+    </tr>
 
     <tr>
         <td rowspan="10">

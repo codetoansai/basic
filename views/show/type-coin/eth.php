@@ -169,4 +169,17 @@ ETH
             <p id="muabitcoin_eth_sell"></p>
         </td>
     </tr>
+    <tr>
+        <td>
+            <a href="https://chimcugay.com" target="_blank">Chimcugay.com</a>
+        </td>
+        <td>
+        </td>
+        <td>
+            <p id="chimcugay_eth_buy"></p>
+        </td>
+        <td>
+            <p id="chimcugay_eth_sell"></p>
+        </td>
+    </tr>
 </table>

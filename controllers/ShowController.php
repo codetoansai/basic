@@ -505,12 +505,14 @@ class ShowController extends Controller {
 			'ethB' => $resultBuy[1][1],
 			'ltcB' => $resultBuy[1][2],
 			'xprB' => $resultBuy[1][3],
+			'usdtB' => $resultBuy[1][4],
 		);
 		$sell = array(
 			'btcS' => $resultSell[1][0],
 			'ethS' => $resultSell[1][1],
 			'ltcS' => $resultSell[1][2],
 			'xprS' => $resultSell[1][3],
+			'usdtS' => $resultSell[1][4],
 		);
 		$kq = array(
 			'buy' => $buy,

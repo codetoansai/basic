@@ -443,6 +443,20 @@ $(document).ready(function() {
                 $("#bosspm_pm_sell").html(data.sellpm);
             }
         });
+        //Chimcugay
+        $.ajax({
+            url: '../show/chimcugay',
+            success: function (data) {
+                $("#chimcugay_btc_buy").html(data.buy.btcB);
+                $("#chimcugay_btc_sell").html(data.sell.btcS);
+                $("#chimcugay_eth_buy").html(data.buy.ethB);
+                $("#chimcugay_eth_sell").html(data.sell.ethS);
+                $("#chimcugay_ltc_buy").html(data.buy.ltcB);
+                $("#chimcugay_ltc_sell").html(data.sell.ltcS);
+                $("#chimcugay_usdt_buy").html(data.buy.usdtB);
+                $("#chimcugay_usdt_sell").html(data.sell.usdtS);
+            }
+        });
         //VNEXMONEY
         $.ajax({
             url: '../show/vnexmoney',

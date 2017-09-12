@@ -30,7 +30,7 @@ LTC
         </td>
     </tr>
 
-        <tr>
+    <tr>
         <td>
             <a href="https://tiktakbtc.com/" target="_blank">Tiktakbtc.com</a>
         </td>
@@ -42,6 +42,20 @@ LTC
         </td>
         <td>
             <p id="tiktakbtc_ltc_sell"></p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="https://chimcugay.com/" target="_blank">chimcugay.com</a>
+        </td>
+        <td>
+
+        </td>
+        <td>
+            <p id="chimcugay_ltc_buy"></p>
+        </td>
+        <td>
+            <p id="chimcugay_ltc_sell"></p>
         </td>
     </tr>
 <!--    <tr>-->

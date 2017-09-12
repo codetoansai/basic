@@ -147,6 +147,19 @@ BTC
             <p id="hamirex_btc_sell"></p>
         </td>
     </tr>
+    <tr>
+        <td>
+            <a href="https://chimcugay.com/" target="_blank">Chimcugay.com</a>
+        </td>
+        <td>
+        </td>
+        <td>
+            <p id="chimcugay_btc_buy"></p>
+        </td>
+        <td>
+            <p id="chimcugay_btc_sell"></p>
+        </td>
+    </tr>
 <!--     <tr>
         <td>
             <a href="https://thumuatienao.com/" target="_blank">Thumuatienao.com</a>
