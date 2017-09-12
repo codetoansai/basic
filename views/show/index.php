@@ -448,17 +448,17 @@ $(document).ready(function() {
             url: '../show/vnexmoney',
             success: function(data){
                 //PM
-                $("#vnexmoney_pm_base1").html(data[1][20]);
-                $("#vnexmoney_pm_base2").html(data[1][21]);
-                $("#vnexmoney_pm_base3").html(data[1][22]);
+                $("#vnexmoney_pm_base1").html(data[1][24]);
+                $("#vnexmoney_pm_base2").html(data[1][25]);
+                $("#vnexmoney_pm_base3").html(data[1][26]);
 
-                $("#vnexmoney_pm_buy_base1").html(data[0][20]);
-                $("#vnexmoney_pm_buy_base2").html(data[0][21]);
-                $("#vnexmoney_pm_buy_base3").html(data[0][22]);
+                $("#vnexmoney_pm_buy_base1").html(data[0][24]);
+                $("#vnexmoney_pm_buy_base2").html(data[0][25]);
+                $("#vnexmoney_pm_buy_base3").html(data[0][26]);
 
-                $("#vnexmoney_pm_sell_base1").html(data[0][23]);
-                $("#vnexmoney_pm_sell_base2").html(data[0][24]);
-                $("#vnexmoney_pm_sell_base3").html(data[0][25]);
+                $("#vnexmoney_pm_sell_base1").html(data[0][27]);
+                $("#vnexmoney_pm_sell_base2").html(data[0][28]);
+                $("#vnexmoney_pm_sell_base3").html(data[0][29]);
                 //USDT
                 $("#vnexmoney_usdt_base1").html(data[1][0]);
                 $("#vnexmoney_usdt_base2").html(data[1][1]);
@@ -494,17 +494,17 @@ $(document).ready(function() {
                 $("#vnexmoney_usdt_sell_base10").html(data[0][19]);
 
                 //BTC
-                $("#vnexmoney_btc_base1").html(data[1][34]);
-                $("#vnexmoney_btc_base2").html(data[1][35]);
-                $("#vnexmoney_btc_base3").html(data[1][36]);
+                $("#vnexmoney_btc_base1").html(data[1][38]);
+                $("#vnexmoney_btc_base2").html(data[1][39]);
+                $("#vnexmoney_btc_base3").html(data[1][40]);
 
-                $("#vnexmoney_btc_buy_base1").html(data[0][34]);
-                $("#vnexmoney_btc_buy_base2").html(data[0][35]);
-                $("#vnexmoney_btc_buy_base3").html(data[0][36]);
+                $("#vnexmoney_btc_buy_base1").html(data[0][38]);
+                $("#vnexmoney_btc_buy_base2").html(data[0][39]);
+                $("#vnexmoney_btc_buy_base3").html(data[0][40]);
 
-                $("#vnexmoney_btc_sell_base1").html(data[0][37]);
-                $("#vnexmoney_btc_sell_base2").html(data[0][38]);
-                $("#vnexmoney_btc_sell_base3").html(data[0][39]);
+                $("#vnexmoney_btc_sell_base1").html(data[0][41]);
+                $("#vnexmoney_btc_sell_base2").html(data[0][42]);
+                $("#vnexmoney_btc_sell_base3").html(data[0][43]);
 
             }
         });

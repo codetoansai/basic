@@ -200,7 +200,7 @@ BTC
         </td>
     </tr>
 
-        <tr>
+    <tr>
         <td rowspan="3">
             <a href="https://vnexmoney.com/" target="_blank">vnexmoney</a>
         </td>
